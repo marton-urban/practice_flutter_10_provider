@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return Selector<CoreState, Color>(
       child: const MainPage(),
       selector: (_, state) => state.backgroundColor,
-      builder: (context, color, child) => MaterialApp(
+      builder: (_, color, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
         theme: ThemeData(
@@ -59,7 +59,7 @@ class MainPage extends StatelessWidget {
           children: [
             Selector<CoreState, int>(
               selector: (_, state) => state.counter,
-              builder: (context, counter, child) => Text(
+              builder: (_, counter, __) => Text(
                 '$counter',
                 style: const TextStyle(fontSize: 100),
               ),
